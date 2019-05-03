@@ -22,7 +22,7 @@
 		<property name="jdbcUrl" value="${jdbc.jdbcUrl}"></property>
 		<property name="driverClass" value="${jdbc.driverClass}"></property>
 		<property name="user" value="${jdbc.user}"></property>
-		<property name="password" value="${jdbc.passworld}"></property>
+		<property name="password" value="${jdbc.password}"></property>
 	</bean>
 	
 	<!--配置mybatis的整合  -->
