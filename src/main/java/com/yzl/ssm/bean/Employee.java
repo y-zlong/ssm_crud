@@ -10,12 +10,38 @@ public class Employee {
     private String email;
 
     private Integer dId;
+    
+    private Department department;
+    
+    
 
-    public Integer getEmpId() {
+    public Employee() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Employee(Integer empId, String empName, String gender, String email, Integer dId) {
+		super();
+		this.empId = empId;
+		this.empName = empName;
+		this.gender = gender;
+		this.email = email;
+		this.dId = dId;
+	}
+
+	public Integer getEmpId() {
         return empId;
     }
 
-    public void setEmpId(Integer empId) {
+    public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
+	public void setEmpId(Integer empId) {
         this.empId = empId;
     }
 

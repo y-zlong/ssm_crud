@@ -4,9 +4,6 @@
   "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-
-	
-  
 	<!--指定数据源位置  -->
   <context id="DB2Tables" targetRuntime="MyBatis3">
  	 <!--取消注释  -->

@@ -41,6 +41,12 @@
 		<property name="basePackage" value="com.yzl.ssm.dao"></property>
 	</bean>
 	
+	<!--配置批量操作的sqlsession  -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
+		<constructor-arg name="executorType" value="BATCH"></constructor-arg>
+	</bean>
+	
 	<!--事务控制  -->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<!--控制的数据源  -->
@@ -50,8 +56,8 @@
 	<!--开启基于注解的事务  但是一般较为复杂的事务可以听过xml配置的形式来使用 -->
 	<aop:config>
 		<!--任意修饰符，service包下，包括子包 所有方法任意参数  -->
-		<aop:pointcut expression="*.com.yzl.ssm.service..*(..))" id="txPoint"/>
-		<aop:advisor advice-ref="txAdice" pointcut-ref="txPoint"/>
+		<aop:pointcut expression="execution(* com.yzl.ssm.service..*(..))" id="txPoint"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPoint"/>
 	</aop:config>
 	
 	<!--事务增强  事务如何切入-->

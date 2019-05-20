@@ -11,4 +11,13 @@
   	<typeAliases>
   		<package name="com.yzl.ssm.bean"/>
   	</typeAliases>
+  	
+  	<!--分页插件  -->
+  	<plugins>
+  		<plugin interceptor="com.github.pagehelper.PageInterceptor">
+  			<!--调整 分页合理化配置避免出现-1页 -->
+  			<property name="reasonable" value="true"/>
+  		</plugin>
+  		
+  	</plugins>
   </configuration>
